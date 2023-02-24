@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.app.set.mapper.number">
+	<!-- com.app.set.domain. -->
+	<select id="allist" resultType="sampleVO">
+		select * from number
+	</select>
+	
+	<select id="whereList" resultType="sampleVO">
+		select * from number where name=#{name}
+	</select>
+	
+	<select id="ascList" resultType="sampleVO">
+		select * from number order by name asc
+	</select>
+	
+	<select id="descList" resultType="sampleVO">
+		select * from number order by name desc
+	</select> 
+	
+	 
+	<insert id="create">
+		insert into number(name, price) values(#{name}, #{price})
+	</insert>
+	
+	<update id="update">
+		update number set name=#{name}, price=#{price} where name=#{name}
+	</update>
+	
+	<delete id="delete">
+		delete from number where=#{name}
+	</delete>
+	
+	
+</mapper>
+<!--
+	<SQL id="search">
+		<if test="searchType != null">
+			AND title like concat("%", #{search}, "%")		
+		</if>
+	</SQL>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
